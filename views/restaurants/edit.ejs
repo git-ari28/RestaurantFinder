@@ -1,0 +1,28 @@
+<% layout('/layouts/boilerplate') %>
+<div class="row">
+    <h1 class="text-center">Edit Restaurant</h1>
+    <div class="col-6 offset-3">
+        <form action="/restaurants/<%=restaurant._id%>?_method=PUT" method="POST" novalidate class="validation">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="restaurant[name]" class="form-control" value="<%= restaurant.name %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" id="location" name="restaurant[location]" class="form-control" value="<%= restaurant.location %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image URL</label>
+                <input type="text" id="image" name="restaurant[image]" class="form-control" value="<%= restaurant.image %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="text" id="price" name="restaurant[price]" class="form-control" value="<%= restaurant.price %>" required>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Update Restaurant Details</button>
+            </div>
+        </form>
+        <a href="/restaurants/<%= restaurant._id %>">Back to show page</a>
+    </div>
+</div>
